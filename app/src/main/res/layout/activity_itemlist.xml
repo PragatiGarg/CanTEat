@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageFood"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/canteen2"
+        android:padding="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/foodName"
+        android:text="Name"
+        android:layout_toRightOf="@+id/imageFood"
+        android:padding="10dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/foodCost"
+        android:text="Cost"
+        android:layout_below="@+id/foodName"
+        android:layout_toRightOf="@+id/imageFood"
+        android:padding="10dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/foodCost"
+        android:text="Add"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+</RelativeLayout>
