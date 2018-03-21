@@ -1,7 +1,6 @@
 package test.authtry1;
 
 import android.content.Intent;
-<<<<<<< HEAD
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -11,21 +10,13 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-=======
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
->>>>>>> 1c9fed6f618d7a5c34c69365bb5fc787407cd173
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-<<<<<<< HEAD
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
-=======
-public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
->>>>>>> 1c9fed6f618d7a5c34c69365bb5fc787407cd173
 
     Button profile;
     Button orders;
@@ -41,21 +32,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         mAuth = FirebaseAuth.getInstance();
 
-<<<<<<< HEAD
+
         profile = findViewById(R.id.buttonProfile);
         orders = findViewById(R.id.buttonOrders);
         menu = findViewById(R.id.buttonMenu);
-=======
-        profile = (Button) findViewById(R.id.buttonProfile);
-        orders = (Button) findViewById(R.id.buttonOrders);
-        menu = (Button) findViewById(R.id.buttonMenu);
->>>>>>> 1c9fed6f618d7a5c34c69365bb5fc787407cd173
-
         profile.setOnClickListener(this);
         orders.setOnClickListener(this);
         menu.setOnClickListener(this);
 
-<<<<<<< HEAD
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -70,8 +55,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-=======
->>>>>>> 1c9fed6f618d7a5c34c69365bb5fc787407cd173
     }
 
     @Override
@@ -86,12 +69,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this, "This service will be made available shortly", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.buttonMenu:
-<<<<<<< HEAD
 //                Toast.makeText(this, "This service will be made available shortly", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this,MenuActivity.class));
-=======
-                Toast.makeText(this, "This service will be made available shortly", Toast.LENGTH_SHORT).show();
->>>>>>> 1c9fed6f618d7a5c34c69365bb5fc787407cd173
                 break;
         }
     }
@@ -106,7 +85,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
-<<<<<<< HEAD
 
     @Override
     public void onBackPressed() {
@@ -164,6 +142,4 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-=======
->>>>>>> 1c9fed6f618d7a5c34c69365bb5fc787407cd173
 }

@@ -5,8 +5,8 @@ import android.graphics.Bitmap;
 import android.media.Image;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.NonNull;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -38,11 +38,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     ProgressBar progressBar;
     String downloadUrl;
     TextView textView;
-<<<<<<< HEAD
-    EditText editText1;
-=======
 
->>>>>>> 1c9fed6f618d7a5c34c69365bb5fc787407cd173
+    EditText editText1;
     FirebaseAuth mAuth;
 
     @Override
@@ -52,18 +49,12 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         mAuth = FirebaseAuth.getInstance();
 
-<<<<<<< HEAD
+
         editText = findViewById(R.id.displayName);
         imageView = findViewById(R.id.imageView);
         progressBar = findViewById(R.id.progressBarImage);
         textView = findViewById(R.id.emailVerify);
         editText1 = findViewById(R.id.displayEmail);
-=======
-        editText = (EditText) findViewById(R.id.displayName);
-        imageView = (ImageView) findViewById(R.id.imageView);
-        progressBar = (ProgressBar) findViewById(R.id.progressBarImage);
-        textView = (TextView) findViewById(R.id.emailVerify);
->>>>>>> 1c9fed6f618d7a5c34c69365bb5fc787407cd173
 
 
         imageView.setOnClickListener(this);
@@ -95,7 +86,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                         .load(photoUri)
                         .into(imageView);
             }
-<<<<<<< HEAD
             if(user.getDisplayName()!=null) {
                 String displayName = user.getDisplayName();
                 editText.setText(displayName);
@@ -104,12 +94,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 String displayName = user.getEmail();
                 editText1.setText(displayName);
             }
-=======
-            if(user.getDisplayName()!=null){
-                String displayName = user.getDisplayName();
-                editText.setText(displayName);
-            }
->>>>>>> 1c9fed6f618d7a5c34c69365bb5fc787407cd173
             if(user.isEmailVerified()){
                 textView.setText("Email Verified");
             } else{
