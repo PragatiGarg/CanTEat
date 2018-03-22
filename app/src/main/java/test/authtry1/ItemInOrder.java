@@ -6,15 +6,17 @@ package test.authtry1;
 
 public class ItemInOrder {
     String itemId;
+    String itemName;
     int quantity;
 
-    public void ItemInOrder(){
+    public ItemInOrder(){
 
     }
 
-    public ItemInOrder(String itemId, int quantity) {
+    public ItemInOrder(String itemId, String itemName, int quantity) {
 
         this.itemId = itemId;
+        this.itemName = itemName;
         this.quantity = quantity;
     }
 
@@ -24,5 +26,9 @@ public class ItemInOrder {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public String getItemName() {
+        return itemName;
     }
 }

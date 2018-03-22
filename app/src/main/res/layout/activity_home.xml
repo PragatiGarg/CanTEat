@@ -20,14 +20,15 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="56dp"
             android:background="#a0d4d8"
             android:gravity="center_vertical"
             android:lineSpacingExtra="8sp"
             android:text="Home"
             android:textAlignment="center"
-            android:textSize="28sp"
-            tools:layout_editor_absoluteX="163dp"
-            tools:layout_editor_absoluteY="175dp" />
+            android:textSize="28sp" />
 
         <ImageView
             android:id="@+id/imageView"

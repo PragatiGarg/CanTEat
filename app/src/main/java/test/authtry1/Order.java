@@ -18,7 +18,7 @@ public class Order {
 
     long timeOfOrder;
 
-    public void Order(){
+    public Order(){
 
     }
 

@@ -1,28 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MenuActivity">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    tools:context=".MenuActivity"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#a0d4d8"
-        android:gravity="center_vertical"
-        android:lineSpacingExtra="8sp"
-        android:text="Menu"
-        android:textAlignment="center"
-        android:textSize="28sp"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="175dp" />
-    <ListView
-        android:id="@+id/listViewFood"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/textView2"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="10sp"/>
-</RelativeLayout>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#a0d4d8"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="8sp"
+            android:text="Menu"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:layout_marginTop="56dp"/>
+        <ListView
+            android:id="@+id/listViewFood"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/textView2"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="10sp"
+            android:paddingTop="10dp"/>
+    </RelativeLayout>
+
+    <include
+    layout="@layout/app_bar_hamburgermenu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+    <android.support.design.widget.NavigationView
+    android:id="@+id/nav_view"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:fitsSystemWindows="true"
+    app:headerLayout="@layout/nav_header"
+    app:menu="@menu/activity_hamburgermenu_drawer" />
+
+</android.support.v4.widget.DrawerLayout>

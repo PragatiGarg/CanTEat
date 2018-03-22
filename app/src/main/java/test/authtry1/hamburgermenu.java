@@ -1,5 +1,6 @@
 package test.authtry1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -75,17 +76,17 @@ public class hamburgermenu extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_canteen) {
-            // Handle the camera action
+            startActivity(new Intent(this,MenuActivity.class));
         } else if (id == R.id.nav_about) {
 
         } else if (id == R.id.nav_live_chat) {
 
         } else if (id == R.id.nav_order_history) {
-
+            startActivity(new Intent(this,OrderActivity.class));
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_profile) {
-
+            startActivity(new Intent(this,ProfileActivity.class));
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
