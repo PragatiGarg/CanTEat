@@ -5,22 +5,29 @@ package test.authtry1;
  */
 
 public class ItemInOrder {
-    String itemId;
+    long itemId;
     String itemName;
     int quantity;
+    long itemCost;
 
     public ItemInOrder(){
 
     }
 
-    public ItemInOrder(String itemId, String itemName, int quantity) {
+    public ItemInOrder(long itemId, int quantity) {
 
         this.itemId = itemId;
-        this.itemName = itemName;
         this.quantity = quantity;
     }
 
-    public String getItemId() {
+    public ItemInOrder(long itemId, String itemName, int quantity, long itemCost) {
+        this.itemId = itemId;
+        this.itemName = itemName;
+        this.quantity = quantity;
+        this.itemCost = itemCost;
+    }
+
+    public long getItemId() {
         return itemId;
     }
 
@@ -30,5 +37,9 @@ public class ItemInOrder {
 
     public String getItemName() {
         return itemName;
+    }
+
+    public long getItemCost() {
+        return itemCost;
     }
 }

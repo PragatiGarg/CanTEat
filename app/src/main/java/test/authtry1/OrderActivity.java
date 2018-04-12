@@ -91,7 +91,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
 
         for(int i =0;i<5;i++){
-            itemList.add(new ItemInOrder("10000"+i,"",5-i));
+            itemList.add(new ItemInOrder(10000+i,5-i));
         }
         String generatedOrderId = databaseOrders.push().getKey();
         Order temp = new Order(generatedOrderId,"100001","10001",250,true,itemList,125472);

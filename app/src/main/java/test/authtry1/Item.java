@@ -1,9 +1,5 @@
 package test.authtry1;
 
-/**
- * Created by User on 21-03-2018.
- */
-
 public class Item {
     String generatedItemId;
     long itemId;

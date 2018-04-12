@@ -41,10 +41,7 @@
             android:layout_below="@+id/textView3"
             android:textAlignment="center"
             />
-
-
-
-        <ProgressBar
+            <ProgressBar
             android:visibility="gone"
             android:id="@+id/progressBarImage"
             android:layout_width="wrap_content"

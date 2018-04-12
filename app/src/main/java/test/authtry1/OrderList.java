@@ -14,10 +14,6 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by User on 21-03-2018.
- */
-
 public class OrderList extends ArrayAdapter<Order> {
 
     private Activity context;

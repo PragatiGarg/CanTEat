@@ -13,22 +13,15 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 import java.util.List;
-
-/**
- * Created by User on 21-03-2018.
- */
-
 public class ItemList extends ArrayAdapter<Item> {
 
     private Activity context;
     private List<Item> itemList;
 
     public ItemList(Activity context,List<Item> itemList){
-
         super(context,R.layout.activity_itemlist,itemList);
         this.context = context;
         this.itemList = itemList;
-
     }
 
     @NonNull
@@ -36,7 +29,6 @@ public class ItemList extends ArrayAdapter<Item> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         LayoutInflater inflater = context.getLayoutInflater();
-
         View listViewItem = inflater.inflate(R.layout.activity_itemlist,null,true);
 
         ImageView imageView = listViewItem.findViewById(R.id.imageFood);
@@ -47,8 +39,6 @@ public class ItemList extends ArrayAdapter<Item> {
 
         foodName.setText(item.getItemName());
         foodCost.setText("Rs. "+(int) item.getItemCost()+".0");
-
-
         return listViewItem;
 
     }
