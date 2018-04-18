@@ -34,11 +34,13 @@ public class ItemList extends ArrayAdapter<Item> {
         ImageView imageView = listViewItem.findViewById(R.id.imageFood);
         TextView foodName = listViewItem.findViewById(R.id.foodName);
         TextView foodCost = listViewItem.findViewById(R.id.foodCost);
-
+        TextView foodId = listViewItem.findViewById(R.id.foodId);
         Item item = itemList.get(position);
 
         foodName.setText(item.getItemName());
         foodCost.setText("Rs. "+(int) item.getItemCost()+".0");
+        foodId.setText(item.getItemId()+"");
+        foodId.setVisibility(TextView.INVISIBLE);
         return listViewItem;
 
     }

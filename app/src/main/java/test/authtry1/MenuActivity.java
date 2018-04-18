@@ -10,31 +10,47 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MenuActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     DatabaseReference databaseItems;
     ListView listViewFood;
     List<Item> itemList;
+    Button viewCart;
+    Cart cart = Cart.getInstance();
+    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.activity_menu);
         listViewFood = findViewById(R.id.listViewFood);
         databaseItems = FirebaseDatabase.getInstance().getReference("Items");
         itemList = new ArrayList<>();
+
+        viewCart = findViewById(R.id.buttonCart);
+        viewCart.setOnClickListener(this);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -49,6 +65,31 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    public void onClickAdd(View v){
+
+        final FirebaseUser user = mAuth.getCurrentUser();
+        RelativeLayout parentRow = (RelativeLayout)v.getParent();
+        TextView idChild = (TextView)parentRow.getChildAt(4);
+        Button addButton = (Button) parentRow.getChildAt(3);
+        cart.setStatus(false);
+        cart.setUserId(user.getUid());
+        cart.addItemtoCart(Long.parseLong(idChild.getText().toString()),1);
+        Toast.makeText(getApplicationContext(),"Item added to cart",Toast.LENGTH_SHORT).show();
+//        Intent intent = new Intent(this,CartActivity.class);
+//        startActivity(intent);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.buttonCart:
+                startActivity(new Intent(this,CartActivity.class));
+                break;
+
+        }
     }
 
     @Override
@@ -132,4 +173,6 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }
