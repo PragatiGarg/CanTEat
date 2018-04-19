@@ -72,10 +72,16 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         final FirebaseUser user = mAuth.getCurrentUser();
         RelativeLayout parentRow = (RelativeLayout)v.getParent();
         TextView idChild = (TextView)parentRow.getChildAt(4);
+        TextView nameChild = (TextView)parentRow.getChildAt(1);
+        TextView costChild = (TextView)parentRow.getChildAt(2);
         Button addButton = (Button) parentRow.getChildAt(3);
         cart.setStatus(false);
         cart.setUserId(user.getUid());
-        cart.addItemtoCart(Long.parseLong(idChild.getText().toString()),1);
+        long idText = Long.parseLong(idChild.getText().toString());
+        String nameText = nameChild.getText().toString();
+        String temp = costChild.getText().toString();
+        int costText = Integer.parseInt(temp.substring(4,temp.length()-2));
+        cart.addItemtoCart(idText,nameText,1,costText);
         Toast.makeText(getApplicationContext(),"Item added to cart",Toast.LENGTH_SHORT).show();
 //        Intent intent = new Intent(this,CartActivity.class);
 //        startActivity(intent);
@@ -86,7 +92,11 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.buttonCart:
-                startActivity(new Intent(this,CartActivity.class));
+                if(cart.cartInstance.items == null){
+                    Toast.makeText(this, "Sorry No items in cart", Toast.LENGTH_SHORT).show();
+                } else{
+                    startActivity(new Intent(this,CartActivity.class));
+                }
                 break;
 
         }

@@ -1,5 +1,6 @@
 package test.authtry1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -27,8 +28,10 @@ public class CartActivity extends AppCompatActivity{
         textView.setText("Total Amount: "+cart.cartInstance.totalAmount+"");
 //        cart.cartInstance.items.add(new ItemInOrder(10001,"",2,30));
 //        textView.setText(cart.cartInstance.items.size()+"");
+
         CartList adapter = new CartList(CartActivity.this,cart.cartInstance.getItems());
         listViewCart.setAdapter(adapter);
+
 
     }
 

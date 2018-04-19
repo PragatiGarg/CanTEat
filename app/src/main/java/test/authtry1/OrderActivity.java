@@ -47,6 +47,8 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
         itemList = new ArrayList<>();
         orderList = new ArrayList<>();
 
+//        createOrders();
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -91,7 +93,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
 
         for(int i =0;i<5;i++){
-            itemList.add(new ItemInOrder(10000+i,5-i));
+            itemList.add(new ItemInOrder(10000+i,"Poha",5-i,30));
         }
         String generatedOrderId = databaseOrders.push().getKey();
         Order temp = new Order(generatedOrderId,"100001","10001",250,true,itemList,125472);
