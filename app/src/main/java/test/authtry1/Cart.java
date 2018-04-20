@@ -79,12 +79,12 @@ public class Cart {
         calculateTotalAmount();
     }
 
-    public void subItemFromCart(long itemId){
+    public void subItemFromCart(final long itemId){
         for(ItemInOrder i:cartInstance.items){
             if(i.itemId == itemId){
                 i.quantity--;
                 if(i.quantity == 0){
-                    cartInstance.items.remove(i);
+                    cartInstance.items.remove(cartInstance.items.indexOf(i));
                 }
             }
         }

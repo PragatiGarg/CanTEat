@@ -24,6 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class OrderActivity extends AppCompatActivity implements View.OnClickListener,NavigationView.OnNavigationItemSelectedListener {
@@ -86,7 +87,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
                         orderList.add(order);
                     }
                 }
-
+                Collections.reverse(orderList);
                 OrderList adapter = new OrderList(OrderActivity.this,orderList);
                 listViewOrder.setAdapter(adapter);
             }
