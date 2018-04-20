@@ -41,6 +41,11 @@ public class ItemList extends ArrayAdapter<Item> {
         foodCost.setText("Rs. "+(int) item.getItemCost()+".0");
         foodId.setText(item.getItemId()+"");
         foodId.setVisibility(TextView.INVISIBLE);
+
+        if(item.getStatus() == 0){
+            listViewItem.findViewById(R.id.buttonAdd).setEnabled(false);
+        }
+
         return listViewItem;
 
     }

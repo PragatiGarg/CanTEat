@@ -20,6 +20,7 @@ public class Cart {
     private static Cart instance;
     private Cart(){
         cartInstance = new Order();
+        cartInstance.status = true;
     }
 
     public void setUserId(String userId){
@@ -35,7 +36,7 @@ public class Cart {
         cartInstance.totalAmount = 0;
         //for loop for all items
         for(int i=0;i<cartInstance.items.size();i++){
-            cartInstance.totalAmount = cartInstance.totalAmount + cartInstance.items.get(i).getItemCost();
+            cartInstance.totalAmount = cartInstance.totalAmount + cartInstance.items.get(i).getItemCost()*cartInstance.items.get(i).getQuantity();
         }
 
     }
@@ -77,6 +78,18 @@ public class Cart {
 
         calculateTotalAmount();
     }
+
+    public void subItemFromCart(long itemId){
+        for(ItemInOrder i:cartInstance.items){
+            if(i.itemId == itemId){
+                i.quantity--;
+                if(i.quantity == 0){
+                    cartInstance.items.remove(i);
+                }
+            }
+        }
+    }
+
     public static synchronized Cart getInstance(){
         if(instance==null){
             instance=new Cart();
@@ -85,5 +98,11 @@ public class Cart {
     }
 
 
+    public Order getCartInstance() {
+        return cartInstance;
+    }
 
+    public void setOrderId(String orderId){
+        cartInstance.orderId= orderId;
+    }
 }

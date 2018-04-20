@@ -15,6 +15,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,6 +36,7 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
     ListView listViewOrder;
 
+    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +51,10 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
         orderList = new ArrayList<>();
 
 //        createOrders();
+
+        mAuth = FirebaseAuth.getInstance();
+
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -69,13 +76,15 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
     protected void onStart() {
         super.onStart();
         orderList.clear();
+        final FirebaseUser user = mAuth.getCurrentUser();
         databaseOrders.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot orderSnapshot: dataSnapshot.getChildren()){
                     Order order= orderSnapshot.getValue(Order.class);
-                    orderList.add(order);
-
+                    if(user.getUid().equals(order.getUserId())){
+                        orderList.add(order);
+                    }
                 }
 
                 OrderList adapter = new OrderList(OrderActivity.this,orderList);

@@ -77,6 +77,8 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
         Button addButton = (Button) parentRow.getChildAt(3);
         cart.setStatus(false);
         cart.setUserId(user.getUid());
+        String orderId = Math.abs((cart.cartInstance.getUserId()+System.currentTimeMillis()/1000).hashCode())+"";
+        cart.setOrderId(orderId);
         long idText = Long.parseLong(idChild.getText().toString());
         String nameText = nameChild.getText().toString();
         String temp = costChild.getText().toString();

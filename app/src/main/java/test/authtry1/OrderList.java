@@ -38,6 +38,7 @@ public class OrderList extends ArrayAdapter<Order> {
         TextView orderId = listViewOrder.findViewById(R.id.orderId);
         TextView orderItem = listViewOrder.findViewById(R.id.orderItem);
         TextView orderCost = listViewOrder.findViewById(R.id.orderCost);
+        TextView orderStatus = listViewOrder.findViewById(R.id.orderStatus);
 
         Order order = orderList.get(position);
         List<ItemInOrder> items = new ArrayList<>();
@@ -49,6 +50,12 @@ public class OrderList extends ArrayAdapter<Order> {
         orderId.setText("Order ID: "+order.getOrderId());
         orderItem.setText("Items: "+itemString );
         orderCost.setText("Total Amount: Rs. " + order.getTotalAmount());
+        if(order.isStatus() == false){
+            orderStatus.setText("Order Status: Pending");
+        } else{
+            orderStatus.setText("Order Status: Completed");
+        }
+
 
 
         return listViewOrder;

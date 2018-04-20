@@ -6,6 +6,7 @@ public class Item {
     String itemName;
     long itemCost;
     String categoryId;
+    int status;
 
 
     public Item(){
@@ -18,6 +19,7 @@ public class Item {
         this.itemName = itemName;
         this.itemCost = itemCost;
         this.categoryId = categoryId;
+        this.status = 1;
     }
 
     public String getGeneratedItemId() {
@@ -38,5 +40,9 @@ public class Item {
 
     public String getCategoryId() {
         return categoryId;
+    }
+
+    public int getStatus() {
+        return status;
     }
 }

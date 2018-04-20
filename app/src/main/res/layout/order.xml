@@ -21,4 +21,10 @@
         android:id="@+id/orderCost"
         android:text="Total Amount: Rs. "
         android:layout_below="@+id/orderItem"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/orderStatus"
+        android:layout_below="@+id/orderCost"/>
+
 </RelativeLayout>
