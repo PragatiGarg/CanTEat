@@ -97,6 +97,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
                 if(cart.cartInstance.items == null){
                     Toast.makeText(this, "Sorry No items in cart", Toast.LENGTH_SHORT).show();
                 } else{
+                    finish();
                     startActivity(new Intent(this,CartActivity.class));
                 }
                 break;
