@@ -80,14 +80,27 @@ public class Cart {
     }
 
     public void subItemFromCart(final long itemId){
-        for(ItemInOrder i:cartInstance.items){
+//        for(ItemInOrder i:cartInstance.items){
+//            if(i.itemId == itemId){
+//                i.quantity--;
+//                if(i.quantity == 0){
+//                    cartInstance.items.remove(cartInstance.items.indexOf(i));
+//                }
+//            }
+//        }
+        Iterator<ItemInOrder> ite = cartInstance.items.iterator();
+        while(ite.hasNext()) {
+            ItemInOrder i = ite.next();
             if(i.itemId == itemId){
                 i.quantity--;
                 if(i.quantity == 0){
-                    cartInstance.items.remove(cartInstance.items.indexOf(i));
+                    ite.remove();
                 }
             }
         }
+
+
+        calculateTotalAmount();
     }
 
     public static synchronized Cart getInstance(){
