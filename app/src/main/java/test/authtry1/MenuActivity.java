@@ -98,6 +98,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
                     Toast.makeText(this, "Sorry No items in cart", Toast.LENGTH_SHORT).show();
                 } else{
                     finish();
+
                     startActivity(new Intent(this,CartActivity.class));
                 }
                 break;
@@ -172,14 +173,10 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(this,MenuActivity.class));
         } else if (id == R.id.nav_about) {
 
-        } else if (id == R.id.nav_live_chat) {
-
-        } else if (id == R.id.nav_order_history) {
+        }  else if (id == R.id.nav_order_history) {
             startActivity(new Intent(this,OrderActivity.class));
-        } else if (id == R.id.nav_share) {
-
         } else if (id == R.id.nav_profile) {
-            startActivity(new Intent(this,ProfileActivity.class));
+            startActivity(new Intent(this,ProfileNewActivity.class));
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

@@ -149,6 +149,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.saveButton:
                 saveUserInformation();
+
                 break;
             case R.id.signOut:
                 signOutUser();
@@ -164,7 +165,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         startActivity(new Intent(this,MainActivity.class));
     }
 
-    private void saveUserInformation() {
+    private void saveUserInformation()      {
         String displayName = editText.getText().toString().trim();
         if(displayName.isEmpty()){
             editText.setError("Name Required");
@@ -182,6 +183,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
                         Toast.makeText(ProfileActivity.this, "Profile Updated", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(),ProfileNewActivity.class));
                     } else{
                         Toast.makeText(ProfileActivity.this, "Some Error", Toast.LENGTH_SHORT).show();
                     }
@@ -190,6 +192,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
 
 
+        } else{
+            Toast.makeText(ProfileActivity.this, "Update photo and name both", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -287,14 +291,10 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             startActivity(new Intent(this,MenuActivity.class));
         } else if (id == R.id.nav_about) {
 
-        } else if (id == R.id.nav_live_chat) {
-
         } else if (id == R.id.nav_order_history) {
             startActivity(new Intent(this,OrderActivity.class));
-        } else if (id == R.id.nav_share) {
-
         } else if (id == R.id.nav_profile) {
-            startActivity(new Intent(this,ProfileActivity.class));
+            startActivity(new Intent(this,ProfileNewActivity.class));
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

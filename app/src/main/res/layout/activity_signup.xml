@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#a0d4d8"
+        android:background="#4ED1FD"
         android:fontFamily="@font/open_sans"
         android:gravity="center_vertical"
         android:lineSpacingExtra="8sp"
@@ -28,6 +28,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView2"
         android:ems="10"
+        android:layout_marginTop="92dp"
         android:hint="Email Address"
         android:inputType="textEmailAddress"
         android:layout_alignParentLeft="true" />
@@ -38,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/eMail"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="15dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"

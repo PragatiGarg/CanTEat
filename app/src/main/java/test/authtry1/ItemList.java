@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import org.w3c.dom.Text;
 
 import java.util.List;
@@ -45,7 +47,12 @@ public class ItemList extends ArrayAdapter<Item> {
         if(item.getStatus() == 0){
             listViewItem.findViewById(R.id.buttonAdd).setEnabled(false);
         }
-
+        if(item.getImageUri()!=null){
+            String photoUri = item.getImageUri().toString();
+            Glide.with(context)
+                    .load(photoUri)
+                    .into(imageView);
+        }
         return listViewItem;
 
     }

@@ -7,19 +7,21 @@ public class Item {
     long itemCost;
     String categoryId;
     int status;
+    String imageUri;
 
 
     public Item(){
 
     }
 
-    public Item(String generatedItemId, long itemId, String itemName, long itemCost, String categoryId) {
+    public Item(String generatedItemId, long itemId, String itemName, long itemCost, String categoryId, String imageUri) {
         this.generatedItemId = generatedItemId;
         this.itemId = itemId;
         this.itemName = itemName;
         this.itemCost = itemCost;
         this.categoryId = categoryId;
         this.status = 1;
+        this.imageUri = this.imageUri;
     }
 
     public String getGeneratedItemId() {
@@ -44,5 +46,9 @@ public class Item {
 
     public int getStatus() {
         return status;
+    }
+
+    public String getImageUri() {
+        return imageUri;
     }
 }

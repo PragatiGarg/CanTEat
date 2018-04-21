@@ -1,6 +1,7 @@
 package test.authtry1;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -51,9 +52,12 @@ public class OrderList extends ArrayAdapter<Order> {
         orderItem.setText("Items: "+itemString );
         orderCost.setText("Total Amount: Rs. " + order.getTotalAmount());
         if(order.isStatus() == false){
-            orderStatus.setText("Order Status: Pending");
+            orderStatus.setText("Pending  ");
+            orderStatus.setTextColor(Color.parseColor("#000000"));
         } else{
-            orderStatus.setText("Order Status: Completed");
+            orderStatus.setText("Completed  ");
+            orderStatus.setTextColor(Color.parseColor("#ff0000"));
+
         }
 
 

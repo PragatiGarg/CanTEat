@@ -73,8 +73,9 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void onClickSub(View v){
+        textView = findViewById(R.id.textViewTotal);
         RelativeLayout parentRow = (RelativeLayout)v.getParent();
-        TextView idChild = (TextView)parentRow.getChildAt(0);
+        TextView idChild = (TextView)parentRow.getChildAt(1);
         cart.subItemFromCart(Long.parseLong(idChild.getText().toString()));
         if(cart.cartInstance.getItems().size() == 0){
             startActivity(new Intent(this, MenuActivity.class));
@@ -82,6 +83,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         } else{
             CartList adapter = new CartList(CartActivity.this,cart.cartInstance.getItems());
             listViewCart.setAdapter(adapter);
+            textView.setText("Total Amount: "+cart.cartInstance.totalAmount+"");
         }
     }
 }

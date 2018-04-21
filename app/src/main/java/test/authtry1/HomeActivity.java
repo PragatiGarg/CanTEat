@@ -62,7 +62,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         switch(v.getId()){
             case R.id.buttonProfile:
-                startActivity(new Intent(this,ProfileActivity.class));
+                startActivity(new Intent(this,ProfileNewActivity.class));
                 break;
             case R.id.buttonOrders:
                 startActivity(new Intent(this,OrderActivity.class));
@@ -128,14 +128,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(this,MenuActivity.class));
         } else if (id == R.id.nav_about) {
 
-        } else if (id == R.id.nav_live_chat) {
-
         } else if (id == R.id.nav_order_history) {
             startActivity(new Intent(this,OrderActivity.class));
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_profile) {
-            startActivity(new Intent(this,ProfileActivity.class));
+        }  else if (id == R.id.nav_profile) {
+            startActivity(new Intent(this,ProfileNewActivity.class));
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

@@ -6,34 +6,74 @@
     tools:context=".CartActivity">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Item Id: "
+        android:id="@+id/idconst"
+        android:visibility="invisible"/>
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewItemId"/>
+        android:id="@+id/textViewItemId"
+        android:visibility="invisible"
+        android:layout_toRightOf="@+id/idconst"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Item Name: "
+        android:id="@+id/nameconst"
+        android:layout_below="@+id/idconst"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textViewItemName"
-        android:layout_below="@+id/textViewItemId"/>
+        android:layout_below="@+id/textViewItemId"
+        android:textColor="#2F4F4F"
+        android:layout_toRightOf="@+id/nameconst"/>
+
+    <TextView
+        android:id="@+id/quanconst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewItemQuantity"
+        android:layout_alignBottom="@+id/textViewItemQuantity"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Quantity: " />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textViewItemQuantity"
-        android:layout_below="@+id/textViewItemName"/>
+        android:layout_below="@+id/textViewItemName"
+        android:textColor="#2F4F4F"
+        android:layout_toRightOf="@+id/quanconst"
+        />
+
+    <TextView
+        android:id="@+id/costconst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/quanconst"
+        android:text="Item Cost: " />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textViewItemCost"
         android:layout_below="@+id/textViewItemQuantity"
-        android:text="Quantity"/>
+        android:textColor="#2F4F4F"
+        android:layout_toRightOf="@+id/costconst"/>
 
     <Button
         android:id="@+id/buttonSub"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/textViewItemCost"
-        android:text="Sub"
+        android:text="Remove"
+        android:textColor="#FF4500"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
         android:onClick="onClickSub"/>
 </RelativeLayout>

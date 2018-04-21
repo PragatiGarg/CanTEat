@@ -23,7 +23,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="56dp"
-            android:background="#a0d4d8"
+            android:background="#4ED1FD"
             android:gravity="center_vertical"
             android:lineSpacingExtra="8sp"
             android:text="Home"
@@ -47,7 +47,7 @@
             android:layout_below="@+id/imageView"
             android:layout_centerHorizontal="true"
             android:text="Profile"
-            android:background="@android:color/holo_blue_dark"
+            android:background="#4ED1FD"
             android:layout_marginTop="20dp"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
         <Button
@@ -57,7 +57,7 @@
             android:layout_below="@+id/buttonProfile"
             android:layout_centerHorizontal="true"
             android:text="Order History"
-            android:background="@android:color/holo_blue_dark"
+            android:background="#4ED1FD"
             android:layout_marginTop="20dp"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
 
@@ -68,7 +68,7 @@
             android:layout_below="@+id/buttonOrders"
             android:layout_centerHorizontal="true"
             android:text="Canteen Menu"
-            android:background="@android:color/holo_blue_dark"
+            android:background="#4ED1FD"
             android:layout_marginTop="20dp"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
 

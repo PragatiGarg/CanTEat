@@ -8,36 +8,64 @@
 
 
     <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#4ED1FD"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="8sp"
+        android:text="Cart"
+        android:textAlignment="center"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/buttonPlaceOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Place Order"
+        android:textColor="#228B22"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:background="#DCDCDC"
+        android:padding="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_below="@id/textView2"/>
+    <TextView
         android:id="@+id/textViewTotal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Total  Amount" />
+        android:text="Total  Amount"
+        android:textColor="#FF8C00"
+        android:textStyle="bold"
+        android:layout_below="@id/buttonPlaceOrder"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:padding="5dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Items: "
         android:id="@+id/items"
-        android:layout_below="@+id/textViewTotal"/>
+        android:textStyle="bold"
+        android:textColor="#2F4F4F"
+        android:layout_below="@+id/textViewTotal"
+        android:padding="5dp"/>
 
     <ListView
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/listCart"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/items"
         android:divider="@android:color/transparent"
         android:dividerHeight="10sp"
-        android:paddingTop="10dp"/>
+        android:paddingTop="10dp"
+        android:padding="5dp"
+        android:scrollbars="none"
+        />
 
-    <Button
-        android:id="@+id/buttonPlaceOrder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/listCart"
-        android:text="Place Order"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
 
 
 </RelativeLayout>
