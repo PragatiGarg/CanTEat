@@ -10,7 +10,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/canteen2"
-        android:background="#FFFFFF"
+        android:background="@android:color/transparent"
         android:padding="15dp" />
 
     <TextView

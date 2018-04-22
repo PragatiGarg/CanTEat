@@ -1,27 +1,23 @@
 package test.authtry1;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
-public class hamburgermenu extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class AboutActivity extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hamburgermenu);
-
+        setContentView(R.layout.activity_about);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -34,9 +30,10 @@ public class hamburgermenu extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-    }
 
+        navigationView.setNavigationItemSelectedListener(this);
+
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -47,12 +44,12 @@ public class hamburgermenu extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.hamburgermenu, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.hamburgermenu, menu);
+//        return true;
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -78,7 +75,7 @@ public class hamburgermenu extends AppCompatActivity
         if (id == R.id.nav_canteen) {
             startActivity(new Intent(this,MenuActivity.class));
         } else if (id == R.id.nav_about) {
-            startActivity(new Intent(this,OrderActivity.class));
+            startActivity(new Intent(this,AboutActivity.class));
         } else if (id == R.id.nav_order_history) {
             startActivity(new Intent(this,OrderActivity.class));
         }  else if (id == R.id.nav_profile) {
@@ -90,3 +87,6 @@ public class hamburgermenu extends AppCompatActivity
         return true;
     }
 }
+
+
+

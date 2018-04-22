@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    tools:context="test.authtry1.AboutActivity"
+    >
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#4ED1FD"
+            android:fontFamily="@font/open_sans"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="8sp"
+            android:text="About"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:layout_marginTop="56dp"
+            />
+
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@mipmap/ic_launcher_foreground"
+
+        android:layout_below="@+id/textView10"
+        android:layout_marginBottom="-141sp"
+        android:layout_marginTop="-30sp"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_marginTop="40dp"
+        android:gravity="start"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:text="Our vision is to digitise the food ordering process in Canteens and Restaurants. CantEat is a prototype of the app that can replace waiters and cashiers. Our canteen is our target workspace. The food ordering process is now made easier and quicker with multiple payment options. "
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="bottom"
+        android:paddingTop="20dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:text="Contact Us for a customised version of this app that can be used in your canteen or restaurant. "
+        android:textColor="#000000" />
+</RelativeLayout>
+  <include
+        layout="@layout/app_bar_hamburgermenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        />
+    />
+</android.support.v4.widget.DrawerLayout>

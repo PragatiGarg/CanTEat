@@ -22,7 +22,7 @@ public class OrderList extends ArrayAdapter<Order> {
 
     public OrderList(Activity context,List<Order> orderList){
 
-        super(context,R.layout.activity_order_old,orderList);
+        super(context,R.layout.activity_order,orderList);
         this.context = context;
         this.orderList= orderList;
 
@@ -53,10 +53,10 @@ public class OrderList extends ArrayAdapter<Order> {
         orderCost.setText("Total Amount: Rs. " + order.getTotalAmount());
         if(order.isStatus() == false){
             orderStatus.setText("Pending  ");
-            orderStatus.setTextColor(Color.parseColor("#000000"));
+            orderStatus.setTextColor(Color.parseColor("#FF8C00"));
         } else{
             orderStatus.setText("Completed  ");
-            orderStatus.setTextColor(Color.parseColor("#ff0000"));
+            orderStatus.setTextColor(Color.parseColor("#000000"));
 
         }
 

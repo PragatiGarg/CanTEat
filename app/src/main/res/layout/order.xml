@@ -7,6 +7,7 @@
         android:layout_height="wrap_content" 
         android:id="@+id/orderId"
         android:text="Order ID: "
+        android:layout_margin="5dp"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
     
     <TextView
@@ -14,6 +15,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/orderItem"
         android:text="Items: "
+        android:layout_margin="7dp"
         android:textSize="15sp"
         android:layout_marginTop="12sp"
         android:layout_below="@+id/orderId"/>
@@ -22,12 +24,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/orderCost"
+        android:layout_margin="5dp"
         android:text="Total Amount: Rs. "
         android:layout_below="@+id/orderItem"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/orderStatus"
+        android:textStyle="bold"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:textColor="#000000"

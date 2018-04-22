@@ -161,12 +161,12 @@ public class ProfileNewActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.hamburgermenu, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.hamburgermenu, menu);
+//        return true;
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -192,7 +192,7 @@ public class ProfileNewActivity extends AppCompatActivity implements View.OnClic
         if (id == R.id.nav_canteen) {
             startActivity(new Intent(this,MenuActivity.class));
         } else if (id == R.id.nav_about) {
-
+            startActivity(new Intent(this,OrderActivity.class));
         } else if (id == R.id.nav_order_history) {
             startActivity(new Intent(this,OrderActivity.class));
         }         else if (id == R.id.nav_profile) {
